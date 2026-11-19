@@ -1,0 +1,8 @@
+vec2 polar(vec2 uv,float ring,float angle){
+    ring = (abs(ring)+1.0)/(3.141*10.0)*20.0;
+    angle = (abs(angle)+3.0)/(3.141*2.0);
+    float d =(floor((length(uv)+1.5)*ring-(ring-1.5))/ring)-0.3;
+    float a = floor(atan(uv.y,uv.x)*angle)/angle;
+    uv = vec2(cos(a),sin(a))*d;
+    return uv;
+}
