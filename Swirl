@@ -1,0 +1,8 @@
+vec2 swirl(vec2 uv, float angle){
+	 float a = atan(uv.y,uv.x);
+   float d = length(uv);
+   a += angle*d;
+   uv.x = cos(a)*d;
+   uv.y = sin(a)*d;
+   return uv;
+}
