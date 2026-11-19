@@ -1,0 +1,8 @@
+vec2 wobble(vec2 uv, float spdist,float freq){
+	 float i = iTime;
+   float a = atan(uv.y,uv.x);
+   float d = length(uv);
+   uv.x = cos(a)*d+cos(d*freq+i)*spdist/10.0;
+   uv.y = sin(a)*d+sin(d*freq+i)*spdist/10.0;
+   return uv;
+}
