@@ -1,0 +1,8 @@
+vec2 tiles(vec2 uv,float size,float spin,float speed){
+   float i = iTime;
+   float d = length(uv);
+   float a = atan(uv.y,uv.x)+spin;
+   uv = vec2(cos(a),sin(a))*d*size/2.0+vec2(0,i/10.0*speed);
+   uv = abs(mod(uv,1.0)-0.5)-0.26;
+   return uv*3.5;
+}
