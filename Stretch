@@ -1,0 +1,12 @@
+vec2 stretch(vec2 uv,float spin,float waves,float jaggies){
+   float i = iTime;
+   float d = length(uv);
+   float a = atan(uv.y,uv.x)+spin;
+   uv = vec2(cos(a),sin(a))*d;
+   uv.y += (sin(uv.x*10.0+i)*waves*0.15-0.06*sin(mod(sin(floor(uv.x*30.0+i*10.0)*5.0)*10.0,1.0)*jaggies))*((1.0-abs(uv.x*2.0)))*step(abs(uv.x),0.5);
+   uv.x = ((clamp((uv.x)+0.5,0.0,1.0)-0.5)*-1.0+uv.x);
+   float d2 = length(uv);
+   float a2 = atan(uv.y,uv.x)-spin;
+   uv = vec2(cos(a2),sin(a2))*d2;
+   return uv;
+}
