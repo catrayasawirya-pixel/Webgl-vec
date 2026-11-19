@@ -1,0 +1,6 @@
+vec2 bulge(vec2 uv,float ball){
+   float d = length(uv);
+   float a = atan(uv.y,uv.x);
+   uv = vec2(cos(a),sin(a))*pow(d,abs(ball/1.5)+1.0)*(abs(ball)*0.1+1.0);
+  return uv;
+}
