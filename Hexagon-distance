@@ -1,0 +1,1 @@
+float dh = length(uv)*sin(abs(mod(atan(uv.y,uv.x),3.141*2.0/6.0))+1.05);
