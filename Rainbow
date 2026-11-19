@@ -1,0 +1,4 @@
+vec4 rainbow(vec4 c,vec2 uv,float rainbows,float spin,float pallete){
+    float i = iTime;
+    return vec4(mix(sin(length(c)*3.0+i+((uv.x*sin(spin)+uv.y*cos(spin))*rainbows)+vec3(0,2,4))*0.5+0.5,vec3(cos(sin(length(c)*3.0+i+(uv.x*sin(spin)+uv.y*cos(spin))*rainbows)*0.5+3.5+vec3(0,2,4))*0.5+0.5)*(cos(length(c)+(i+rainbows*(uv.x*sin(spin)+uv.y*cos(spin))))*0.5+0.5),clamp(sign(mod(pallete/2.0+0.5,2.0)-1.0),0.0,1.0)),1);
+}
