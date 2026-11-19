@@ -1,0 +1,8 @@
+vec2 flower(vec2 uv,float spdist,float spdist2,float freq){
+   //itch io moesh1t pet background
+   float i = iTime;
+   float d = length(uv);
+   float a = atan(uv.y,uv.x);
+   uv = vec2(cos(a),sin(a))*(d*(sin(a*freq-i*2.0)*spdist*0.05+1.0)+(uv.x-uv.y)*spdist2*0.3);
+   return uv;
+}
