@@ -1,0 +1,9 @@
+vec2 swirlsin(vec2 uv, float spdist,float freq){
+	 float i = iTime;
+   float a = atan(uv.y,uv.x);
+   float d = length(uv);
+   a += sin(d*freq+i)*spdist/2.0;
+   uv.x = cos(a)*d;
+   uv.y = sin(a)*d;
+   return uv;
+}
