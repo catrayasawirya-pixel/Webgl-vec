@@ -1,0 +1,6 @@
+vec2 mirrorx(vec2 uv){
+    float d = length(uv);
+    float a = atan(uv.y,uv.x);
+    uv = vec2(cos(a*2.0),sin(a))*d;
+    return uv;
+}
