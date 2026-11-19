@@ -1,0 +1,9 @@
+vec2 warp(vec2 uv,float deformation,float size,float spin){
+   //tiktok create effect distort shader
+   float i = iTime;
+   float d = length(uv);
+   float a = atan(uv.y,uv.x)+spin;
+   uv = vec2(cos(a),sin(a))*pow(d,abs(deformation)*0.3)*(abs(size));
+   uv.x += sin(uv.y+i);
+   return uv;
+}
