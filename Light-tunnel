@@ -1,0 +1,6 @@
+vec2 litu(vec2 uv, float size){
+	  float a = atan(uv.y,uv.x);
+    float d = length(uv);
+    uv = vec2(cos(a),sin(a))*clamp(d/abs(size),0.0,1.0)*abs(size);
+    return uv;
+}
