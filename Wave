@@ -1,0 +1,6 @@
+vec2 wave(vec2 uv,float freq,float spwav,float angle,float warang){
+    float d = length(uv);
+    float a = atan(uv.y,uv.x);
+    uv += sin(cos(a+angle)*d*freq)*vec2(sin(angle+warang),cos(angle+warang))*spwav/4.0;
+    return uv;
+}
