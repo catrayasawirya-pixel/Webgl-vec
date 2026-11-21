@@ -1,0 +1,8 @@
+vec2 kalevoid(vec2 uv,float angle,float base,float spin) {
+	  float a = atan(uv.y,uv.x);
+	  float d = length(uv);
+	  a = mod(a+spin,6.281/4.0)*angle;
+	  uv.x = sin(a+base)*d;
+	  uv.y = cos(a+base)*d;
+    return uv;
+}
